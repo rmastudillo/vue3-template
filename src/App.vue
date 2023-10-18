@@ -9,7 +9,6 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
@@ -19,7 +18,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
   <RouterView />
 </template>
-
+w
 <style scoped>
 header {
   line-height: 1.5;
