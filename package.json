@@ -1,8 +1,9 @@
 {
   "name": "vite-project",
   "homepage": "https://rmastudillo.github.io/vue3-template",
-  "version": "0.0.0",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite --host=0.0.0.0 --port=8080",
     "build": "vue-tsc --noEmit && vite build",

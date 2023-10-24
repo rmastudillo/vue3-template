@@ -1,15 +1,12 @@
-import { fileURLToPath, URL } from 'node:url'
-
-import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { env } from 'node:process'
+import { fileURLToPath, URL } from 'node:url'
+import { defineConfig, loadEnv } from 'vite'
 
-console.log('holamundio')
-console.log(env.URL, env.url, process.env)
-// https://vitejs.dev/config/
+const env = loadEnv(process.cwd(), '')
+
 export default defineConfig({
   plugins: [vue()],
-  base: env.VITE_REPO_NAME ?? '/vue3-template/',
+  base: env.VITE_REPO_NAME ?? '/vue3-test/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
