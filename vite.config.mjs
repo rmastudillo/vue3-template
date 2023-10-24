@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import vue from '@vitejs/plugin-vue'
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig, loadEnv } from 'vite'
