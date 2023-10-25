@@ -8,7 +8,7 @@ console.log(import.meta.url, 'HOLAMUNDOOOOO', env.VITE_REPO_NAME)
 
 export default defineConfig({
   plugins: [vue()],
-  base: env.VITE_REPO_NAME,
+  base: env.VITE_REPO_NAME ?? '/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
