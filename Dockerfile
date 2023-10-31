@@ -12,8 +12,7 @@ RUN apt-get update && \
     apt-get install -y sudo nano micro && \
     apt-get install -y git openssl openssh-client openssh-server sshfs rsync && \
     apt-get install -y zsh-syntax-highlighting zsh-common zsh-dev zsh zsh-autosuggestions zsh-doc && \
-    apt-get install -y htop tldr && \
-    tldr --update && \
+    apt-get install -y htop && \
     rm -rf /var/lib/apt/lists/*
 
 # Cambiar el nombre del usuario "node" a "${NODE_USER}" y ajustar su home
@@ -27,8 +26,6 @@ RUN echo "${NODE_USER} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${NODE_USER} && 
 USER ${NODE_USER}
 
 WORKDIR /usr/src/app
-
-RUN tldr --update
 
 # Copia el contenido local al contenedor
 COPY . .
