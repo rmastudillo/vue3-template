@@ -5,16 +5,14 @@ services:
     container_name: vue3
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: production.Dockerfile
       args:
-        NODE_ENV_USER: richi
+        NODE_ENV_USER: production
         NODE_VERSION: 21-bookworm
     user: "1000:1000"
+    command: bash -c "yarn preview"
     environment:
       - UID=1000
       - GID=1000
-    volumes:
-      - ./:/usr/src/app
-    command: tail -f /dev/null
     ports:
       - "8080:8080"

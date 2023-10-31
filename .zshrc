@@ -16,6 +16,7 @@ plugins=(
     command-not-found  # Shows where to find the package if not found
     gh # git completion
     node
+    history
     yarn
     zsh-autosuggestions
     zsh-syntax-highlighting
