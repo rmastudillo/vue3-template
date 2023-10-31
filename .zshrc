@@ -112,6 +112,16 @@ _comp_options+=(globdots)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cls="clear"
 
 alias config="micro $HOME/.zshrc"
-source /home/richi/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ${HOME}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+ZSH_HIGHLIGHT_MAXLENGTH=1024
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor line regexp root)
+ZSH_HIGHLIGHT_STYLES[cursor]='fg=standout,bg=standout'
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=086'
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=086'
+ZSH_HIGHLIGHT_STYLES[path]='fg=white,italic'
+ZSH_HIGHLIGHT_STYLES[command-substitution]='none'
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=magenta'
