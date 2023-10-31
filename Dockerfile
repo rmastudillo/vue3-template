@@ -39,6 +39,6 @@ expose 8080
 #expose 22
 
 # Establece zsh como shell predeterminado
-CMD ["zsh"]
+CMD ["yarn install","zsh"]
 
 
