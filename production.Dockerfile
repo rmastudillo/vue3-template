@@ -11,9 +11,7 @@ USER root
 
 # Actualizar, instalar paquetes necesarios y luego limpiar la caché
 RUN apt-get update && \
-    apt-get install -y sudo nano micro git openssl \
-    sshfs rsync zsh-syntax-highlighting zsh-common zsh-dev zsh zsh-autosuggestions \
-    zsh-doc htop && \
+    apt-get install -y sudo && \
     rm -rf /var/lib/apt/lists/*
 
 # Cambiar el nombre del usuario "node" a "${NODE_USER}" si no existe y ajustar su home
@@ -33,10 +31,9 @@ WORKDIR /usr/src/app
 # Copia el contenido local al contenedor
 COPY . .
 
-# Instala Oh My Zsh
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUN yarn install
+RUN yarn build
 
 expose 8080
 
-# Establece zsh como shell predeterminado
-CMD ["zsh"]
+CMD ["yarn","preview"]
