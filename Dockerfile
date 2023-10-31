@@ -1,10 +1,12 @@
-ARG NODE_USER=richi
 ARG NODE_VERSION=21-bookworm
 ENV NODE_USER=${NODE_USER}
 ENV NODE_VERSION=${NODE_VERSION}
 
 # Imagen base
 FROM node:${NODE_VERSION}
+
+ARG NODE_ENV_USER=richi
+ENV NODE_USER $NODE_ENV_USER
 
 # Cambiar al usuario root para poder ejecutar comandos administrativos
 USER root
@@ -34,6 +36,8 @@ COPY . .
 
 # Instala Oh My Zsh
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+expose 8080
 
 # Establece zsh como shell predeterminado
 CMD ["zsh"]

@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        NODE_USER: richi
+        NODE_ENV_USER: richi
         NODE_VERSION: 21-bookworm
     user: "1000:1000"
     environment:
@@ -17,5 +17,5 @@ services:
     command: tail -f /dev/null
     ports:
       - "8080:8080"
-      - "3000:3000"
-      - "1022:22"
+      # Para que te puedas conectar por ssh a tu contenedor si y sólo si te da la gana
+      - "10022:22"
