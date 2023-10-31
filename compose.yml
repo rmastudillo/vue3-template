@@ -10,8 +10,8 @@ services:
         NODE_VERSION: 21-bookworm
     user: "1000:1000"
     environment:
-      - UID: 1000
-      - GID: 1000
+      - UID=1000
+      - GID=1000
     volumes:
       - ./:/usr/src/app
     command: tail -f /dev/null
