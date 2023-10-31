@@ -18,4 +18,5 @@ services:
     ports:
       - "8080:8080"
       - "3000:3000"
+      # Para que te puedas conectar por ssh a tu contenedor si y sólo si te da la gana
       - "1022:22"
