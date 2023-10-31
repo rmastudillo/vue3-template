@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+source $HOME/.profile
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -70,15 +73,19 @@ ZSH_THEME="fino"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
 plugins=(
-git
-zsh-autosuggestions
-history
-emoji
-encode64
-copypath
-command-not-found
+    git  # aliases ( g | ga | gaa | gb | gpristine grh | grhh | gco | gf | gp | gpu | gst | gsh ... )
+    dirhistory  # alt + arrow to navigate
+    cp  # cpv ==> runs rsync equivalent
+    command-not-found  # Shows where to find the package if not found
+    gh # git completion
+    node
+    yarn
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -114,14 +121,11 @@ _comp_options+=(globdots)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cls="clear"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 alias config="micro $HOME/.zshrc"
 source ${HOME}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ZSH_HIGHLIGHT_MAXLENGTH=1024
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor line regexp root)
 ZSH_HIGHLIGHT_STYLES[cursor]='fg=standout,bg=standout'
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=086'
