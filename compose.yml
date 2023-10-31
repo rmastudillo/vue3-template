@@ -1,7 +1,8 @@
 version: '3.8'
 
 services:
-  app:
+  vue3:
+    container_name: vue3
     build:
       context: .
       dockerfile: Dockerfile
@@ -18,4 +19,4 @@ services:
     ports:
       - "8080:8080"
       # Para que te puedas conectar por ssh a tu contenedor si y sólo si te da la gana
-      - "10022:22"
+      #- "10022:22"

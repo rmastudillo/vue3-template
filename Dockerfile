@@ -36,6 +36,7 @@ COPY . .
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 expose 8080
+#expose 22
 
 # Establece zsh como shell predeterminado
 CMD ["zsh"]
