@@ -11,6 +11,7 @@ USER root
 
 # Actualizar, instalar paquetes necesarios y luego limpiar la caché
 RUN apt-get update && \
+  apt update && \
   apt-get install -y sudo nano micro git openssl \
   sshfs rsync zsh-syntax-highlighting zsh-common zsh-dev zsh zsh-autosuggestions \
   zsh-doc htop && \
