@@ -32,7 +32,7 @@ compose_relaunch() {
 }
 
 
-if [[ "${ENVIRONMENT}" == "production" ]] ; then
+if [[ "${NODE_ENV}" == "production" ]] ; then
 	echo "Producción"
 	COMPOSE_FILE="./compose.production.yml"
 
